@@ -17,6 +17,7 @@ public:
 	//constructor
 	Fecha();
 	Fecha(int, int, int);
+	Fecha(std::string);
 	
 	//setters
 	void setDia(int);
@@ -29,5 +30,6 @@ public:
 	int getAnio();
 	void agregarDias(int canDias);
 	std::string toString();
+
 };
 

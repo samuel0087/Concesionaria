@@ -26,6 +26,23 @@ Fecha::Fecha() {
 	setAnio(2023);
 }
 
+//fecha actual
+Fecha::Fecha(std::string date = "currenDate") {
+
+	if (date == "currenDate") {
+		time_t timeActual;
+		timeActual = time(NULL);
+
+		struct tm* fech;
+		fech = localtime(&timeActual);
+
+		_dia = fech->tm_mday;
+		_mes = fech->tm_mon + 1;
+		_anio = fech->tm_year + 1900;
+	}
+}
+
+
 //setters
 void Fecha::setDia(int numD) {
    if(numD >= 1 && numD <= cantidadDiaMes(_mes, _anio)) {
@@ -140,3 +157,5 @@ void Fecha::agregarDias(int canDias) {
 		agregarDia();
 	}
 }
+
+
