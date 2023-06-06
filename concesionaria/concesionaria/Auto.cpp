@@ -64,6 +64,10 @@ void Auto::setKilometraje(float km) {
 	_kilometraje = km;
 }
 
+void Auto::setEstado(bool estado) {
+	_estado = estado;
+}
+
 //getters
 int Auto::getId(){
 	return _idAuto;
