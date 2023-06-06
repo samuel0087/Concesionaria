@@ -14,7 +14,7 @@ Auto::Auto() {
 	_estado = false;
 }
 
-Auto::Auto(int id, std::string marca, std::string modelo, int cantPuertas, int anio, int combustible, float cilindraje, bool condicion, float kilometraje, bool estado) {
+Auto::Auto(int id, std::string marca, std::string modelo, int cantPuertas, int anio, int combustible, float cilindraje, int condicion, float kilometraje, bool estado) {
 	_idAuto = id;
 	_marca = marca;
 	_modelo = modelo;

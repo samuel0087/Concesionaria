@@ -1,5 +1,6 @@
 #include "Fecha.h"
 #include <iostream>
+#include <ctime>
 #include <stdlib.h>
 
 using namespace std;
@@ -27,19 +28,20 @@ Fecha::Fecha() {
 }
 
 //fecha actual
-Fecha::Fecha(std::string date = "currenDate") {
-
-	if (date == "currenDate") {
-		time_t timeActual;
-		timeActual = time(NULL);
-
-		struct tm* fech;
-		fech = localtime(&timeActual);
-
-		_dia = fech->tm_mday;
-		_mes = fech->tm_mon + 1;
-		_anio = fech->tm_year + 1900;
+Fecha::Fecha(std::string date) {
+	if (date != "currenDate") {
+		return;
 	}
+
+	time_t timeActual;
+	timeActual = time(NULL);
+
+	struct tm* fech;
+	fech = localtime(&timeActual);
+
+	_dia = fech->tm_mday;
+	_mes = fech->tm_mon + 1;
+	_anio = fech->tm_year + 1900;
 }
 
 

@@ -16,8 +16,9 @@ private:
 public:
 	//constructor
 	Fecha();
-	Fecha(int, int, int);
 	Fecha(std::string);
+	Fecha(int, int, int);
+	
 	
 	//setters
 	void setDia(int);
