@@ -129,12 +129,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Auto.cpp" />
+    <ClCompile Include="AutoManager.cpp" />
     <ClCompile Include="concesionaria.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="AutosArchivo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Auto.h" />
+    <ClInclude Include="AutoManager.h" />
     <ClInclude Include="AutosArchivo.h" />
     <ClInclude Include="Fecha.h" />
   </ItemGroup>
