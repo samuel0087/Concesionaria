@@ -1,7 +1,22 @@
 #include "AutoManager.h"
 
 void AutoManager::agregar() {
-	
+	int id = this->generarId();
+	Auto aux = this->cargar(id);
+
+	this->mostrar(aux);
+
+	char opc;
+	std::cout << "¿Desea guardar este registro?" << std::endl;
+	std::cout << "      S - si     N - no" << std::endl;
+	std::cin >> opc;
+
+	if (opc != 'S' && opc != 's') {
+		std::cout << "Operacion cancelada... :)" << std::endl;
+		return;
+	}
+
+	int status = _archivoA.guardar(aux);
 }
 
 void AutoManager::buscar() {
@@ -14,8 +29,9 @@ void AutoManager::buscar() {
 	//verificar si ese id existe
 	int pos = _archivoA.buscarPorId(id);
 
-	if (pos >= 0) {
+	if (pos < 0) {
 		std::cout << "No existe ningun registro con ese numero Id..." << std::endl;
+		return;
 	}
 
 	//Leer el registro del archivo
@@ -33,8 +49,9 @@ void AutoManager::modificar() {
 
 	int pos = _archivoA.buscarPorId(id);
 
-	if (pos >= 0) {
+	if (pos < 0) {
 		std::cout << "No existe ningun registro con ese numero Id..." << std::endl;
+		return;
 	}
 	
 	Auto reg = _archivoA.leer(pos);
@@ -72,8 +89,9 @@ void AutoManager::baja() {
 	//verificar si ese id existe
 	int pos = _archivoA.buscarPorId(id);
 
-	if (pos >= 0) {
+	if (pos < 0) {
 		std::cout << "No existe ningun registro con ese numero Id..." << std::endl;
+		return;
 	}
 
 	//Leer el registro del archivo
