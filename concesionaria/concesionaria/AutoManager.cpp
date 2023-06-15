@@ -74,6 +74,22 @@ void AutoManager::baja() {
 }
 
 void AutoManager::listarTodo() {
+	int cantRegistros = _archivoA.getCantidadRegistros();
+	Auto* autos = new Auto[cantRegistros];
+
+	if (autos == nullptr) {
+		std::cout << "No se pudo listar los registros... :(" << std::endl;
+		return;
+	}
+
+	std::cout << "------------------------------------" << std::endl;
+	std::cout << "      Lista de autos en stock" << std::endl;
+	std::cout << "------------------------------------" << std::endl;
+
+	for (int i = 0; i < cantRegistros; i++) {
+		this->mostrar(autos[i]);
+		std::cout << "------------------------------------" << std::endl;
+	}
 
 }
 
