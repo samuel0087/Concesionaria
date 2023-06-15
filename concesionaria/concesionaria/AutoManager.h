@@ -11,6 +11,7 @@ class AutoManager{
 		void baja();
 		void listarTodo();
 		void mostrar(Auto reg);
+		Auto cargar(int id);
 	
 	private:
 		AutosArchivo _archivoA = AutosArchivo("autos.dat");
