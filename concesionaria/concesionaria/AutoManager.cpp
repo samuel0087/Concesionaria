@@ -16,7 +16,14 @@ void AutoManager::agregar() {
 		return;
 	}
 
-	int status = _archivoA.guardar(aux);
+	int result = _archivoA.guardar(aux);
+
+	if (result > 0) {
+		std::cout << "Registro guardado" << std::endl;
+	}
+	else {
+		std::cout << "No se pudo guardar este registro" << std::endl;
+	}
 }
 
 void AutoManager::buscar() {
@@ -132,10 +139,12 @@ void AutoManager::listarTodo() {
 		return;
 	}
 
+	_archivoA.leer(autos, cantRegistros);
+
 	std::cout << "------------------------------------" << std::endl;
 	std::cout << "      Lista de autos en stock" << std::endl;
 	std::cout << "------------------------------------" << std::endl;
-
+	std::cout << "----   "<< cantRegistros<<"   ------ " << std::endl;
 	for (int i = 0; i < cantRegistros; i++) {
 		this->mostrar(autos[i]);
 		std::cout << "------------------------------------" << std::endl;
@@ -144,6 +153,7 @@ void AutoManager::listarTodo() {
 }
 
 void AutoManager::mostrar(Auto reg) {
+	system("cls");
 	std::cout << "Numero de registro :" << reg.getId() << std::endl;
 
 	if (!reg.getEstado()) {
@@ -157,7 +167,7 @@ void AutoManager::mostrar(Auto reg) {
 	std::cout << "Combustible :" << reg.getCombustible() << std::endl;
 	std::cout << "Motor :" << reg.getCilindraje() << std::endl;
 	std::cout << "Condicion :" << reg.getCondicion() << std::endl;
-	std::cout << "Kilometros" << reg.getKilometraje() << std::endl;
+	std::cout << "Kilometros: " << reg.getKilometraje() << std::endl;
 }
 
 Auto AutoManager::cargar(int id) {
@@ -174,7 +184,6 @@ Auto AutoManager::cargar(int id) {
 	getline(std::cin, marca);
 
 	std::cout << "Modelo: ";
-	std::cin.ignore();
 	getline(std::cin, modelo);
 
 	std::cout << "Cantidad de puertas: ";
@@ -195,8 +204,9 @@ Auto AutoManager::cargar(int id) {
 	std::cout << "Kilometraje: ";
 	std::cin >> kilometraje;
 
-	return Auto(id, marca, modelo, cantidadPuertas, anioFabricacion, combustible, cilindraje, condicion, kilometraje, true);
+	Auto aux = Auto(id, marca, modelo, cantidadPuertas, anioFabricacion, combustible, cilindraje, condicion, kilometraje, true);
 
+	return aux;
 }
 
 int AutoManager::existeId(int id) {
@@ -205,5 +215,10 @@ int AutoManager::existeId(int id) {
 
 int AutoManager::generarId() {
 	int cantRegistros = _archivoA.getCantidadRegistros();
+
+	if (cantRegistros < 0) {
+		cantRegistros = 0;
+	}
+
 	return cantRegistros+1;
 }

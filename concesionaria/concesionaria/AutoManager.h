@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 #include "Auto.h"
 #include "AutosArchivo.h"
 

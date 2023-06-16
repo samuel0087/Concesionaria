@@ -70,7 +70,7 @@ void AutosArchivo::leer(Auto* listRegs, int cantRegistros) {
 		return;
 	}
 
-	fread(&listRegs, sizeof(Auto), cantRegistros, archivoA);
+	fread(listRegs, sizeof(Auto), cantRegistros, archivoA);
 	fclose(archivoA);
 }
 

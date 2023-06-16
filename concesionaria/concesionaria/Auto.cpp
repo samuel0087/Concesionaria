@@ -3,8 +3,8 @@
 
 Auto::Auto() {
 	_idAuto = 0;
-	_marca = "";
-	_modelo = "";
+	strcpy(_marca, "");
+	strcpy(_modelo, "");
 	_cantidadPuertas = 0;
 	_anioFabricacion = 0;
 	_combustible = 0;
@@ -16,8 +16,8 @@ Auto::Auto() {
 
 Auto::Auto(int id, std::string marca, std::string modelo, int cantPuertas, int anio, int combustible, float cilindraje, int condicion, float kilometraje, bool estado) {
 	_idAuto = id;
-	_marca = marca;
-	_modelo = modelo;
+	strcpy(_marca, marca.c_str());
+	strcpy(_modelo, modelo.c_str());
 	_cantidadPuertas = cantPuertas;
 	_anioFabricacion = anio;
 	_combustible = combustible;
@@ -33,11 +33,11 @@ void Auto::setId(int id) {
 }
 
 void Auto::setMarca(std::string marca) {
-	_marca = marca;
+	strcpy(_marca, marca.c_str());
 }
 
 void Auto::setModelo(std::string modelo) {
-	_modelo = modelo;
+	strcpy(_modelo, modelo.c_str());
 }
 
 void Auto::setCantidadPuertas(int cantPuertas) {

@@ -1,11 +1,11 @@
-// concesionaria.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
-
 #include <iostream>
+#include "Menu.h"
 
 int main()
 {
+    Menu menu;
     std::cout << "Hello World!\n";
+
 }
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar

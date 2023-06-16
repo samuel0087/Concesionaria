@@ -133,12 +133,14 @@
     <ClCompile Include="concesionaria.cpp" />
     <ClCompile Include="Fecha.cpp" />
     <ClCompile Include="AutosArchivo.cpp" />
+    <ClCompile Include="Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Auto.h" />
     <ClInclude Include="AutoManager.h" />
     <ClInclude Include="AutosArchivo.h" />
     <ClInclude Include="Fecha.h" />
+    <ClInclude Include="Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

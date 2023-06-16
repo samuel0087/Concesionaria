@@ -1,12 +1,13 @@
 #pragma once
+#include <cstring>
 #include <string>
 
 class Auto
 {
 	private: 
 		int _idAuto;
-		std::string _marca;
-		std::string _modelo;
+		char _marca[50];
+		char _modelo[50];
 		int _cantidadPuertas;
 		int _anioFabricacion;
 		int _combustible;
