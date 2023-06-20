@@ -141,14 +141,7 @@ void AutoManager::listarTodo() {
 
 	_archivoA.leer(autos, cantRegistros);
 
-	std::cout << "------------------------------------" << std::endl;
-	std::cout << "      Lista de autos en stock" << std::endl;
-	std::cout << "------------------------------------" << std::endl;
-	std::cout << "----   "<< cantRegistros<<"   ------ " << std::endl;
-	for (int i = 0; i < cantRegistros; i++) {
-		this->mostrar(autos[i]);
-		std::cout << "------------------------------------" << std::endl;
-	}
+	this->mostrarTodo(autos, cantRegistros);
 
 }
 
@@ -168,6 +161,34 @@ void AutoManager::mostrar(Auto reg) {
 	std::cout << "Motor :" << reg.getCilindraje() << std::endl;
 	std::cout << "Condicion :" << reg.getCondicion() << std::endl;
 	std::cout << "Kilometros: " << reg.getKilometraje() << std::endl;
+}
+
+void AutoManager::mostrarTodo(Auto* autos, int cantRegistros) {
+	system("cls");
+
+	std::cout << std::left;
+	std::cout << std::setw(10) << "Marca";
+	std::cout << std::setw(30) << "Modelo";
+	std::cout << std::setw(4) << "CP";
+	std::cout << std::setw(6) << "Anio";
+	std::cout << std::setw(5) << "Comb";
+	std::cout << std::setw(5) << "Motor";
+	std::cout << std::setw(5) << "Cond";
+	std::cout << std::setw(15) << "Kilometros" << std::endl;
+
+	for (int i = 0; i < cantRegistros; i++) {
+		if (autos[i].getEstado()) {
+			std::cout << std::left;
+			std::cout << std::setw(10) << autos[i].getMarca();
+			std::cout << std::setw(30) << autos[i].getModelo();
+			std::cout << std::setw(4) << autos[i].getCantidadPuertas();
+			std::cout << std::setw(6) << autos[i].getAnioFabricacion();
+			std::cout << std::setw(5) << autos[i].getCombustible();
+			std::cout << std::setw(7) << autos[i].getCilindraje();
+			std::cout << std::setw(5) << autos[i].getCondicion();
+			std::cout << std::setw(15) << autos[i].getKilometraje() << std::endl;
+		}
+	}
 }
 
 Auto AutoManager::cargar(int id) {
