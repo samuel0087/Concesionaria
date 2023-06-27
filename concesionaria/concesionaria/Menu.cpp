@@ -11,10 +11,11 @@ void Menu::menuPrincipal() {
 		std::cout << "        Concecionaria SOLARI" << std::endl;
 		std::cout << "--------------------------------------" << std::endl;
 		std::cout << "1 - AUTOS" << std::endl;
-		std::cout << "--------" << std::endl;
-		std::cout << "--------" << std::endl;
+		std::cout << "--------------------------------------" << std::endl;
 		std::cout << "0 - SALIR " << std::endl;
 		std::cin >> opc;
+
+		system("cls");
 
 		switch(opc){
 			case 1:
@@ -36,17 +37,20 @@ void Menu::menuAutos() {
 	int opc;
 
 	do {
-		std::cout << "--------------------------------------" << std::endl;
-		std::cout << "             Menu Autos" << std::endl;
-		std::cout << "--------------------------------------" << std::endl;
-		std::cout << "1 - Agregar al stock " << std::endl;
-		std::cout << "2 - Listar Todo" << std::endl;
-		std::cout << "3 - Buscar" << std::endl;
-		std::cout << "4 - Modificar" << std::endl;
-		std::cout << "5 - Eliminar" << std::endl;
-		std::cout << "--------" << std::endl;
-		std::cout << "0 - Volver " << std::endl;
+		std::cout << "+ -------------------------------------- +" << std::endl;
+		std::cout << "|             Menu Autos                 |" << std::endl;
+		std::cout << "+ -------------------------------------- +" << std::endl;
+		std::cout << "| 1 - Agregar al stock                   |" << std::endl;
+		std::cout << "| 2 - Listar Todo                        |" << std::endl;
+		std::cout << "| 3 - Buscar                             |" << std::endl;
+		std::cout << "| 4 - Modificar                          |" << std::endl;
+		std::cout << "| 5 - Eliminar                           |" << std::endl;
+		std::cout << "+ -------------------------------------- +" << std::endl;
+		std::cout << "| 0 - Volver							   |" << std::endl;
+		std::cout << "+ -------------------------------------- +" << std::endl;
+
 		std::cin >> opc;
+		system("cls");
 
 		switch (opc) {
 		case 1:
@@ -55,6 +59,7 @@ void Menu::menuAutos() {
 
 		case 2:
 			managerA.listarTodo();
+			
 			break;
 
 		case 3:
@@ -73,5 +78,7 @@ void Menu::menuAutos() {
 			system("cls");
 			break;
 		}
+		system("pause");
+		system("cls");
 	} while (opc != 0);
 }

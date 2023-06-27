@@ -176,6 +176,8 @@ void AutoManager::mostrarTodo(Auto* autos, int cantRegistros) {
 	std::cout << std::setw(5) << "Cond";
 	std::cout << std::setw(15) << "Kilometros" << std::endl;
 
+	std::cout << "-----------------------------------------------------------------------------------" << std::endl;
+
 	for (int i = 0; i < cantRegistros; i++) {
 		if (autos[i].getEstado()) {
 			std::cout << std::left;
